@@ -24,8 +24,9 @@ var fighter;
             return _this;
         }
         Airplane.produce = function (textureName, fireDelay) {
-            if (fighter.Airplane.cacheDict[textureName] == null)
+            if (fighter.Airplane.cacheDict[textureName] == null) {
                 fighter.Airplane.cacheDict[textureName] = [];
+            }
             var dict = fighter.Airplane.cacheDict[textureName];
             var theFighter;
             if (dict.length > 0) {
@@ -55,6 +56,7 @@ var fighter;
         Airplane.prototype.createBullet = function (evt) {
             this.dispatchEventWith("createBullet");
         };
+        Airplane.cacheDict = {};
         return Airplane;
     }(egret.DisplayObjectContainer));
     fighter.Airplane = Airplane;

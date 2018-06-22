@@ -16,7 +16,7 @@ var fighter;
         function BgMap() {
             var _this = _super.call(this) || this;
             _this.speed = 2;
-            _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.$onAddToStage, _this);
+            _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
             return _this;
         }
         BgMap.prototype.onAddToStage = function (event) {
@@ -27,7 +27,8 @@ var fighter;
             this.rowCount = Math.ceil(this.stageH / this.textureHeight) + 1;
             this.bmpArr = [];
             for (var i = 0; i < this.rowCount; i++) {
-                var bgBmp = fighter.createBitmapByName("bgImage");
+                var bgBmp = fighter.createBitmapByName("bg_jpg");
+                bgBmp.width = this.stageW;
                 bgBmp.y = this.textureHeight * i - (this.textureHeight * this.rowCount - this.stageH);
                 this.bmpArr.push(bgBmp);
                 this.addChild(bgBmp);

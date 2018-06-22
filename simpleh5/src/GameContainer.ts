@@ -34,6 +34,8 @@ module fighter {
             this.btnStart.x = (this.stageW-this.btnStart.width)/2;
             this.btnStart.y = (this.stageH-this.btnStart.height)/2;
             this.btnStart.touchEnabled = true;
+            this.btnStart.addEventListener(egret.TouchEvent.TOUCH_TAP, this.gameStart, this);
+            this.addChild(this.btnStart);
             this.myFighter = fighter.Airplane.produce("f1_png", 100);
             this.myFighter.y = this.stageH-this.myFighter.height-50;
             this.addChild(this.myFighter);

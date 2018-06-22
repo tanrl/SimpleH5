@@ -9,12 +9,12 @@
 		"libs/modules/promise/promise.js"
 	],
 	"game": [
+		"bin-debug/AssetAdapter.js",
 		"bin-debug/GameUtil.js",
-		"bin-debug/Airplane.js",
 		"bin-debug/BgMap.js",
 		"bin-debug/Bullet.js",
 		"bin-debug/GameContainer.js",
-		"bin-debug/AssetAdapter.js",
+		"bin-debug/Airplane.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",

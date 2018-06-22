@@ -1,11 +1,12 @@
 // TypeScript file
 module fighter {
     export class Airplane extends egret.DisplayObjectContainer {
-        private static cacheDict:Object[];
+        private static cacheDict:Object = {};
 
         public static produce(textureName:string, fireDelay:number):fighter.Airplane {
-            if (fighter.Airplane.cacheDict[textureName] == null)
+            if (fighter.Airplane.cacheDict[textureName] == null) {
                 fighter.Airplane.cacheDict[textureName] = [];
+            }
             var dict:fighter.Airplane[] = fighter.Airplane.cacheDict[textureName];
             var theFighter:fighter.Airplane;
             if (dict.length > 0) {

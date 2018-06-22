@@ -16,6 +16,7 @@ module fighter {
      export function createBitmapByName(name:string):egret.Bitmap {
         let result = new egret.Bitmap();
         let texture: egret.Texture = RES.getRes(name);
+        console.log(texture);
         result.texture = texture;
         return result;
      }

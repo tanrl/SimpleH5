@@ -10,7 +10,7 @@ module fighter {
 
         public constructor() {
             super();
-            this.addEventListener(egret.Event.ADDED_TO_STAGE, this.$onAddToStage, this);
+            this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
         }
         private onAddToStage(event:egret.Event) {
             this.stageW = this.stage.stageWidth;
@@ -21,7 +21,8 @@ module fighter {
             this.bmpArr = [];
 
             for (var i:number = 0; i < this.rowCount; i++) {
-                var bgBmp:egret.Bitmap = fighter.createBitmapByName("bgImage");
+                var bgBmp:egret.Bitmap = fighter.createBitmapByName("bg_jpg");
+                bgBmp.width = this.stageW;
                 bgBmp.y = this.textureHeight*i-(this.textureHeight*this.rowCount-this.stageH);
                 this.bmpArr.push(bgBmp);
                 this.addChild(bgBmp);
